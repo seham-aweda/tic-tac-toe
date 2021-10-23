@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Seham's TIC-TAC-TOE game
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -14,57 +14,55 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `The Task`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We are going to build a tic-tac-toe game with react hooks.\
+I’ve broken down the assignment in two sections.\
+Section 1 deals with the basics of the game.\
+Section 2 deals with time travel.
+### `Sectoin 1`
 
-### `npm run build`
+1. Get a board to be displayed on the screen.
+2. How are you going to represent the board in code? Matrix?
+3. First, turn each square into a X.
+4. Represent that “X” into your board.
+- Do not override you state. Create a new state and get a reference to the
+state. Modify that new state. So section 2 will be possible.
+5. Then, take turns to change the square to a O.
+6. Represent that “O” to your board.
+7. You cannot click on a square if it is occupied.
+8. Determine if somebody won.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Section 2`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Not mutating state directly
+Immutability makes complex features much easier to implement. Because we
+created a copy of our state we can implement a “time travel” feature that
+allows us to review the tic-tac-toe game’s history and “jump back” to previous
+moves. This functionality isn’t specific to games — an ability to undo and redo
+certain actions is a common requirement in applications. Avoiding direct data
+mutation lets us keep previous versions of the game’s history intact, and reuse
+them later.
+Each time we make a move, store the board data in a state called “history” for
+example, that will represent all board states, from the first to the last move.
+And anytime you want reference to a particular move you can fetch it from
+the “history” state.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How To Play
 
-### `npm run eject`
+just an X O game. \
+one time it is turn X and then the turn is O.\
+when there is a winner you will not be able to click any more on the board so press restart
+you can go pack with your move and go ahead with your moves with you HISTORY.\
+ENJOY :)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### THOUGHTS OF WORKING ON IT
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+first i started by displaying the board on the screen with all the css, then i started dividing the task to components:\
+1.square.\
+2.board.\
+3.game.\
+i tried to loop on the square component with a map so i can show me 9 squares on the board, so i thought i should initilaize an empty array with length 9.\
+so in this aray i will but the result(X OR O) in the index the it belongs to the square.\
+anf the truthy state is for telling the player how will play now with a terenary operator.\ 
+with the on clickshow function we will update the state with each click on the squares, so we had to transport info from the son(square) to the grandpa(game).\
