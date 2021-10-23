@@ -14,9 +14,7 @@ const CalculateWinner =(squares)=>{
 		if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
 			return squares[a];
 		}
-        else{
-            return "Draw"
-        }
+        
 	}
 	return null;
 }

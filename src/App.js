@@ -1,4 +1,5 @@
 import './App.css';
+// import Game1 from './components/game copy';
 import Game from './components/game';
 
 function App() {
