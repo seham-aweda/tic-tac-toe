@@ -9,7 +9,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+height: 100vh;
   width:100vw;
   padding: 1rem;
 }
@@ -18,8 +18,9 @@ h1 {
   text-align: center;
 }
 .board {
-  height: 25%;
-  width: 25%;
+  
+  height: 30rem;
+  width: 40rem;
   background-color: #0da192;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
